@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://daonjungpapa.github.io/ipo-radar-blog/sitemap.xml
-Sitemap: https://daonjungpapa.github.io/b2b-tender-blog/sitemap.xml
+Sitemap: https://ipo.qtilab.com/sitemap.xml
+Sitemap: https://tender.qtilab.com/sitemap.xml
