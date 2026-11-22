@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>마스터 엑셀 구독 &amp; B2B 폐쇄망 AI 서버 구축 | QTI Lab</title>
+  <meta name="description" content="매일 아침 갱신되는 공모주·입찰 마스터 엑셀 구독 및 사내 폐쇄망(On-Premises) 문서 파싱·로컬 LLM 자동화 서버 구축 상담 안내" />
+  <link rel="canonical" href="https://qtilab.com/b2b/" />
+  <script>(function(){try{var t=localStorage.getItem("qti-theme");if(t==="dark"||t==="light"){document.documentElement.dataset.theme=t;}else if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.dataset.theme="dark";}}catch(_){}})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" />
+  <link rel="stylesheet" href="../assets/css/tokens.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+</head>
+<body>
+  <header class="qti-gnb">
+    <div class="qti-in">
+      <a class="qti-logo" href="../"><span class="qti-logo-mark" aria-hidden="true"></span><span>QTI Lab</span></a>
+      <nav class="qti-nav" aria-label="주요 메뉴">
+        <a href="https://ipo.qtilab.com/">IPO 레이더</a>
+        <a href="https://tender.qtilab.com/" class="is-tender">입찰 인텔리전스</a>
+        <a href="../#charts">통계 차트</a>
+        <a href="#excel">엑셀 구독</a>
+        <a href="./" class="is-active" aria-current="page">B2B</a>
+      </nav>
+      <span class="qti-gnb-sp"></span>
+      <button type="button" class="qti-icon-btn" data-theme-toggle aria-pressed="false" aria-label="다크 모드 전환">◐</button>
+      <button type="button" class="qti-icon-btn qti-menu-btn" data-menu-toggle aria-expanded="false" aria-controls="qti-mobile-drawer" aria-label="모바일 메뉴 열기">☰</button>
+    </div>
+  </header>
+  <nav class="qti-drawer" id="qti-mobile-drawer" aria-label="모바일 메뉴" hidden>
+    <a href="../">허브 포털 (qtilab.com)</a>
+    <a href="https://ipo.qtilab.com/">IPO 퀀트 수급 레이더</a>
+    <a href="https://tender.qtilab.com/">공공입찰 시방서 인텔리전스</a>
+    <a href="./" class="is-active">엑셀 구독 · B2B 구축</a>
+  </nav>
+
+  <main class="qti-sec">
+    <div class="qti-in">
+      <div class="qti-eyebrow">ENTERPRISE &amp; DATA SUBSCRIPTION</div>
+      <h1 style="font-size:clamp(26px,3.4vw,38px);margin-bottom:10px;">마스터 엑셀 구독 &amp; 사내 폐쇄망 AI 서버 구축</h1>
+      <p class="muted" style="margin:0 0 28px;max-width:70ch;">외부 클라우드 API로 민감한 입찰 시방서·공시 문서를 유출하지 않고, 사내 로컬 GPU/Apple Silicon 서버와 NAS만으로 24시간 자동 분석 파이프라인을 운영합니다.</p>
+
+      <!-- Master Excel Subscription Section -->
+      <section id="excel" class="qti-card" style="margin-bottom:24px;">
+        <div class="qti-grid qti-g2" style="align-items:center;">
+          <div>
+            <span class="qti-badge qti-b-dday mono">PREMIUM MASTER EXCEL</span>
+            <h2 style="font-size:24px;margin:10px 0 8px;">매일 아침 06:30 자동 갱신 마스터 스프레드시트</h2>
+            <p class="muted sm">웹 리포트의 모든 정량 수치(DART 수요예측·의무보유확약·유통금액, 나라장터 추정가격·필수면허·발주처 과거 낙찰하한율)를 필터링·정렬 가능한 `.xlsx` 파일로 통합 제공합니다.</p>
+            <ul class="sm" style="padding-left:18px;margin:12px 0 18px;">
+              <li>공모주 트랙: 전 종목 수급·확약 기간별 비중·유사 구간 백테스트 시트</li>
+              <li>공공입찰 트랙: IT·네트워크·AI 공고 추정가격·필수면허·하한율 누적 DB</li>
+              <li>상업적 내부 분석·영업 검토 활용 가능 (투자 권유 아님)</li>
+            </ul>
+            <a class="qti-btn qti-btn-accent" href="#b2b-contact">엑셀 샘플 및 구독 문의 →</a>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;">
+            <img src="../assets/charts/pipeline_arch.svg" alt="QTI Lab Outbound Push 폐쇄망 자동화 아키텍처" />
+            <div class="xs muted" style="text-align:center;margin-top:6px;">Outbound Push · 외부 포트 개방 0개 · 로컬 LLM 추론 아키텍처</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- B2B Form (V1 Lightweight 4-Field + Interest Chips · Formspree + mailto fallback) -->
+      <section id="b2b-contact" class="qti-grid qti-g2" style="align-items:start;">
+        <div class="qti-card">
+          <span class="qti-badge qti-b-ipo mono">B2B CONSULTATION</span>
+          <h2 style="font-size:22px;margin:10px 0 6px;">무료 기술 상담 &amp; 엑셀 구독 문의</h2>
+          <p class="xs muted" style="margin:0 0 16px;">기본 정보만 남겨주시면 영업일 기준 24시간 내에 회신드립니다. (직접 문의: <a href="mailto:lastima33@gmail.com">lastima33@gmail.com</a>)</p>
+
+          <form id="qti-b2b-form" data-endpoint="" novalidate>
+            <div class="qti-grid qti-g2" style="gap:12px;">
+              <div class="qti-field">
+                <label for="b2b-comp">회사 / 기관명 *</label>
+                <input id="b2b-comp" name="company" type="text" required placeholder="예: ㈜한빛정보통신" />
+              </div>
+              <div class="qti-field">
+                <label for="b2b-mail">업무용 이메일 *</label>
+                <input id="b2b-mail" name="email" type="email" required placeholder="name@company.co.kr" />
+              </div>
+            </div>
+            <div class="qti-field">
+              <label>관심 영역 (복수 선택)</label>
+              <div class="qti-chips">
+                <button type="button" class="qti-chip qti-topic-chip is-active" aria-pressed="true">마스터 엑셀 구독</button>
+                <button type="button" class="qti-chip qti-topic-chip" aria-pressed="false">사내 폐쇄망 AI 서버</button>
+                <button type="button" class="qti-chip qti-topic-chip" aria-pressed="false">시방서 자동 파싱</button>
+                <button type="button" class="qti-chip qti-topic-chip" aria-pressed="false">커스텀 파이프라인</button>
+              </div>
+            </div>
+            <div class="qti-field">
+              <label for="b2b-msg">요청 요약 (선택)</label>
+              <textarea id="b2b-msg" name="message" rows="3" placeholder="관심 트랙(공모주/공공입찰), 사내 문서량 또는 보안 요건을 간단히 적어주세요."></textarea>
+            </div>
+            <div id="qti-b2b-error" class="qti-alert-err" hidden></div>
+            <div id="qti-b2b-ok" class="qti-alert-ok" hidden></div>
+            <button type="submit" class="qti-btn qti-btn-primary">무료 기술 상담 요청</button>
+          </form>
+        </div>
+
+        <div class="qti-card">
+          <h3 style="font-size:18px;margin-bottom:10px;">사내 폐쇄망 구축 특장점</h3>
+          <div class="qti-row-list">
+            <div><span class="qti-badge qti-b-ipo mono">01</span><div class="qti-row-main"><div class="qti-row-title">완전 폐쇄망 · 외부 유출 0%</div><div class="qti-row-sub">PDF·HWP 시방서를 사내 로컬 LLM(Ollama)에서만 처리</div></div></div>
+            <div><span class="qti-badge qti-b-tender mono">02</span><div class="qti-row-main"><div class="qti-row-title">고정 클라우드 토큰 비용 0원</div><div class="qti-row-sub">Apple Silicon 워크스테이션 + NAS 단일 구축으로 무제한 추론</div></div></div>
+            <div><span class="qti-badge qti-b-dday mono">03</span><div class="qti-row-main"><div class="qti-row-title">실시간 사내 알림 · 엑셀 자동화</div><div class="qti-row-sub">관심 면허·예산 조건 매칭 공고만 텔레그램/슬랙/엑셀로 즉시 전달</div></div></div>
+          </div>
+          <div class="qti-disclaimer" style="margin-top:16px;">
+            2단계 업데이트 예정: Mac mini · Synology NAS · 방화벽 하드웨어 분해 3D 아키텍처 뷰어(Blender glTF/Draco)가 본 페이지에 추가됩니다.
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="qti-footer">
+    <div class="qti-in">
+      <div class="qti-ft-bottom" style="border-top:0;padding-top:0;">
+        <span>© 2026 퀀트 &amp; 입찰 인텔리전스 랩 · <a href="../about.html">소개</a> · <a href="../privacy.html">개인정보처리방침</a> · <a href="../terms.html">이용약관</a></span>
+        <span>문의: <a href="mailto:lastima33@gmail.com">lastima33@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+  <script defer src="../assets/js/qti-ui.js"></script>
+</body>
+</html>

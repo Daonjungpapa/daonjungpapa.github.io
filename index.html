@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,11 +15,15 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="퀀트 &amp; 입찰 인텔리전스 랩" />
   <meta name="twitter:description" content="DART 공모주 수급 리포트 및 나라장터 공공입찰 시방서 인텔리전스 허브" />
+  <script>(function(){try{var t=localStorage.getItem("qti-theme");if(t==="dark"||t==="light"){document.documentElement.dataset.theme=t;}else if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.dataset.theme="dark";}}catch(_){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@600;700;900&display=swap" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" />
+  <link rel="stylesheet" href="./assets/css/tokens.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -30,789 +34,314 @@
     "description": "금융감독원 DART 공모주 수급 정량 분석 및 조달청 나라장터 공공입찰 시방서 기술 요약 리서치 허브"
   }
   </script>
-  <style>
-    :root {
-      --navy: #1F4E78;
-      --navy-deep: #153654;
-      --navy-soft: #EFF6FF;
-      --bg: #F8FAFC;
-      --card: #FFFFFF;
-      --surface-alt: #F1F5F9;
-      --text: #0F172A;
-      --text-body: #1E293B;
-      --muted: #475569;
-      --subtle: #64748B;
-      --border: #E2E8F0;
-      --border-strong: #CBD5E1;
-      --emerald: #0F766E;
-      --emerald-soft: #ECFDF5;
-      --emerald-border: #99F6E4;
-      --gold: #D97706;
-      --gold-soft: #FFFBEB;
-      --gold-border: #FDE68A;
-      --font-serif: "Noto Serif KR", Georgia, serif;
-      --font-sans: "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-      --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.04), 0 6px 20px rgba(15, 23, 42, 0.03);
-      --shadow-hover: 0 10px 28px rgba(31, 78, 120, 0.1);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: var(--font-sans);
-      background-color: var(--bg);
-      background-image: radial-gradient(rgba(31, 78, 120, 0.06) 0.75px, transparent 0.75px);
-      background-size: 24px 24px;
-      color: var(--text);
-      line-height: 1.72;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: var(--navy); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    a:hover { color: var(--emerald); }
-
-    .accent-rule {
-      height: 4px;
-      background: linear-gradient(90deg, var(--navy-deep) 0%, var(--navy) 55%, var(--emerald) 80%, var(--gold) 100%);
-    }
-
-    .site-header {
-      background: var(--navy);
-      color: #FFFFFF;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      box-shadow: 0 2px 12px rgba(15, 23, 42, 0.12);
-    }
-
-    .header-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 14px 24px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px 24px;
-    }
-
-    .brand-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: #FFFFFF;
-      text-decoration: none;
-    }
-    .brand-link:hover { color: #FFFFFF; opacity: 0.94; }
-
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 9px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .brand-text { display: flex; flex-direction: column; line-height: 1.25; }
-    .brand-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.78);
-    }
-    .brand-title {
-      font-family: var(--font-serif);
-      font-size: 1.12rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #FFFFFF;
-    }
-
-    .site-nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px;
-    }
-    .site-nav a {
-      color: rgba(255, 255, 255, 0.88);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      padding: 7px 12px;
-      border-radius: 7px;
-      transition: background-color 0.16s ease, color 0.16s ease;
-    }
-    .site-nav a:hover,
-    .site-nav a[aria-current="page"] {
-      background: rgba(255, 255, 255, 0.14);
-      color: #FFFFFF;
-    }
-
-    .shell {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 30px 24px 56px;
-    }
-
-    .hero-panel {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-top: 4px solid var(--navy);
-      border-radius: 14px;
-      padding: 36px 40px;
-      box-shadow: var(--shadow-card);
-      margin-bottom: 28px;
-      animation: fadeUp 0.35s ease-out both;
-    }
-
-    .eyebrow-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: var(--navy-soft);
-      color: var(--navy);
-      border: 1px solid #BFDBFE;
-      margin-bottom: 14px;
-    }
-
-    .hero-panel h1 {
-      margin: 0 0 12px;
-      font-family: var(--font-serif);
-      font-size: clamp(1.75rem, 3vw, 2.38rem);
-      font-weight: 900;
-      color: var(--navy);
-      line-height: 1.28;
-      letter-spacing: -0.025em;
-    }
-
-    .hero-lead {
-      margin: 0 0 24px;
-      color: var(--muted);
-      font-size: 1.04rem;
-      max-width: 78ch;
-    }
-
-    .stat-strip {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-    }
-    .stat-box {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 16px;
-    }
-    .stat-k {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--subtle);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .stat-v {
-      margin-top: 4px;
-      font-size: 0.96rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .track-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      margin-bottom: 28px;
-    }
-
-    .track-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 30px 30px 26px;
-      box-shadow: var(--shadow-card);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-      animation: fadeUp 0.4s ease-out both;
-    }
-    .track-card:nth-child(2) { animation-delay: 0.06s; }
-    .track-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
-    }
-    .track-ipo { border-top: 4px solid var(--emerald); }
-    .track-g2b { border-top: 4px solid var(--gold); }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 11px;
-      border-radius: 6px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-    }
-    .badge-emerald {
-      background: var(--emerald-soft);
-      color: #0B5E57;
-      border: 1px solid var(--emerald-border);
-    }
-    .badge-gold {
-      background: var(--gold-soft);
-      color: #92400E;
-      border: 1px solid var(--gold-border);
-    }
-    .badge-navy {
-      background: var(--navy-soft);
-      color: var(--navy-deep);
-      border: 1px solid #BFDBFE;
-    }
-
-    .track-kpi-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin: 10px 0 14px;
-    }
-    .track-kpi-chip {
-      display: inline-flex;
-      align-items: center;
-      padding: 3px 9px;
-      border-radius: 999px;
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      font-weight: 600;
-      background: var(--surface-alt);
-      color: var(--text-body);
-      border: 1px solid var(--border-strong);
-    }
-
-    .reading-progress-track {
-      width: 100%;
-      height: 3px;
-      background: rgba(255, 255, 255, 0.12);
-      overflow: hidden;
-    }
-    #reading-progress {
-      width: 0%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--emerald), var(--gold));
-      transition: width 0.08s linear;
-    }
-
-    .ad-slot {
-      margin: 22px 0;
-      padding: 10px 14px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: #F8FAFC;
-      text-align: center;
-      overflow: hidden;
-    }
-    .ad-label {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      color: #94A3B8;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    ins.adsbygoogle[data-ad-status="unfilled"] {
-      display: none !important;
-    }
-    .ad-slot:has(ins[data-ad-status="unfilled"]) {
-      display: none !important;
-    }
-
-    #back-to-top {
-      position: fixed;
-      right: 22px;
-      bottom: 24px;
-      z-index: 50;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      background: var(--navy);
-      color: #FFFFFF;
-      font-family: var(--font-sans);
-      font-size: 0.82rem;
-      font-weight: 700;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.2);
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(8px);
-      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease, background-color 0.15s ease;
-    }
-    #back-to-top.is-visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    #back-to-top:hover {
-      background: var(--navy-deep);
-    }
-
-    .track-card h2 {
-      margin: 14px 0 10px;
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.35;
-    }
-
-    .track-card p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .feature-list {
-      margin: 0 0 22px;
-      padding: 0;
-      list-style: none;
-      border-top: 1px solid var(--border);
-    }
-    .feature-list li {
-      padding: 9px 0;
-      border-bottom: 1px solid var(--surface-alt);
-      font-size: 0.9rem;
-      color: var(--text-body);
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-    }
-    .feature-list li::before {
-      content: "▪";
-      font-family: var(--font-mono);
-      color: var(--navy);
-      font-weight: 700;
-    }
-
-    .track-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.16s ease;
-    }
-    .btn-primary {
-      background: var(--navy);
-      color: #FFFFFF;
-      border: 1px solid var(--navy);
-    }
-    .btn-primary:hover {
-      background: var(--navy-deep);
-      color: #FFFFFF;
-    }
-    .btn-emerald {
-      background: var(--emerald);
-      color: #FFFFFF;
-      border: 1px solid var(--emerald);
-    }
-    .btn-emerald:hover {
-      background: #0B5E57;
-      color: #FFFFFF;
-    }
-    .btn-outline {
-      background: #FFFFFF;
-      color: var(--navy);
-      border: 1px solid var(--border-strong);
-    }
-    .btn-outline:hover {
-      border-color: var(--navy);
-      background: var(--navy-soft);
-      color: var(--navy);
-    }
-
-    .methodology-panel {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px 34px;
-      box-shadow: var(--shadow-card);
-    }
-    .methodology-panel h2 {
-      margin: 0 0 8px;
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--navy);
-    }
-    .methodology-panel > p {
-      margin: 0 0 20px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    .gov-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .gov-item {
-      padding: 16px 18px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--bg);
-    }
-    .gov-item h3 {
-      margin: 0 0 6px;
-      font-size: 0.96rem;
-      color: var(--navy);
-    }
-    .gov-item p {
-      margin: 0 0 10px;
-      font-size: 0.86rem;
-      color: var(--muted);
-      line-height: 1.58;
-    }
-    .gov-item a {
-      font-size: 0.84rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .site-footer {
-      border-top: 1px solid var(--border);
-      background: #FFFFFF;
-      padding: 32px 24px 42px;
-      color: var(--muted);
-      font-size: 0.86rem;
-    }
-    .footer-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .footer-top {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px 24px;
-    }
-    .footer-brand {
-      font-family: var(--font-serif);
-      font-weight: 700;
-      color: var(--navy);
-      font-size: 0.98rem;
-    }
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 18px;
-    }
-    .footer-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .footer-links a:hover { color: var(--navy); text-decoration: underline; }
-    .footer-disclaimer {
-      margin: 0;
-      padding: 12px 14px;
-      border-radius: 8px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.6;
-    }
-    .footer-copy {
-      margin: 0;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--subtle);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .hero-panel, .track-card { animation: none; }
-    }
-    @media (max-width: 820px) {
-      .track-grid { grid-template-columns: 1fr; }
-      .stat-strip, .gov-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .header-inner { padding: 14px 16px; }
-      .shell { padding: 20px 16px 40px; }
-      .hero-panel { padding: 24px 20px; }
-      .track-card { padding: 22px 20px; }
-      .methodology-panel { padding: 22px 20px; }
-    }
-  </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939017300505908" crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SCVZHNK8C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2SCVZHNK8C');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2SCVZHNK8C');</script>
 </head>
 <body>
-  <div class="accent-rule" aria-hidden="true"></div>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand-link" href="https://qtilab.com/">
-        <span class="brand-mark" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="3" stroke="rgba(255,255,255,0.45)"></rect>
-            <path d="M7 16V11" stroke="#5EEAD4"></path>
-            <path d="M12 16V7"></path>
-            <path d="M17 16V13" stroke="#FCD34D"></path>
-          </svg>
-        </span>
-        <span class="brand-text">
-          <span class="brand-eyebrow">QUANT &amp; TENDER INTELLIGENCE LAB</span>
-          <span class="brand-title">퀀트 &amp; 입찰 인텔리전스 랩</span>
-        </span>
+  <div id="qti-reading-progress" aria-hidden="true"></div>
+
+  <!-- ① Global Header (Single-Line 60px · Zero Wrap · No Login Icon) -->
+  <header class="qti-gnb">
+    <div class="qti-in">
+      <a class="qti-logo" href="./" aria-label="QTI Lab 허브 홈">
+        <span class="qti-logo-mark" aria-hidden="true"></span>
+        <span>QTI Lab</span>
       </a>
-      <nav class="site-nav" aria-label="주 메뉴">
-        <a href="index.html" aria-current="page">허브 홈</a>
-        <a href="https://ipo.qtilab.com/">IPO 퀀트 레이더</a>
-        <a href="https://tender.qtilab.com/">공공입찰 인텔리전스</a>
-        <a href="about.html">랩 소개</a>
-        <a href="privacy.html">개인정보처리방침</a>
-        <a href="terms.html">이용약관/면책조항</a>
+      <nav class="qti-nav" aria-label="주요 메뉴">
+        <a href="https://ipo.qtilab.com/">IPO 레이더</a>
+        <a href="https://tender.qtilab.com/" class="is-tender">입찰 인텔리전스</a>
+        <a href="#charts">통계 차트</a>
+        <a href="./b2b/#excel">엑셀 구독</a>
+        <a href="./b2b/">B2B</a>
       </nav>
-    </div>
-    <div class="reading-progress-track" aria-hidden="true">
-      <div id="reading-progress"></div>
+      <span class="qti-gnb-sp"></span>
+      <div class="qti-gnb-search">
+        <span aria-hidden="true">🔍</span>
+        <input type="search" id="gnb-q" placeholder="종목·발주처 검색" aria-label="빠른 검색" />
+      </div>
+      <button type="button" class="qti-icon-btn" data-theme-toggle aria-pressed="false" aria-label="다크 모드 전환" title="다크 모드로 전환">◐</button>
+      <button type="button" class="qti-icon-btn qti-menu-btn" data-menu-toggle aria-expanded="false" aria-controls="qti-mobile-drawer" aria-label="모바일 메뉴 열기">☰</button>
     </div>
   </header>
+  <nav class="qti-drawer" id="qti-mobile-drawer" aria-label="모바일 메뉴" hidden>
+    <a href="./" class="is-active">허브 포털 (qtilab.com)</a>
+    <a href="https://ipo.qtilab.com/">IPO 퀀트 수급 레이더</a>
+    <a href="https://tender.qtilab.com/">공공입찰 시방서 인텔리전스</a>
+    <a href="#charts">오늘의 퀀트 리서치 차트</a>
+    <a href="./b2b/#excel">마스터 엑셀 구독</a>
+    <a href="./b2b/">B2B 폐쇄망 구축 문의</a>
+    <a href="./about.html">랩 소개 · 방법론</a>
+  </nav>
 
-  <main class="shell">
-    <section class="hero-panel">
-      <div class="eyebrow-badge">QUANT &amp; TENDER INTELLIGENCE LAB · RESEARCH PORTAL</div>
-      <h1>퀀트 &amp; 입찰 인텔리전스 랩</h1>
-      <p class="hero-lead">
-        금융감독원 전자공시(OpenDART) 기반 공모주 수급 정량 분석과 조달청 나라장터(G2B) IT·인프라 입찰 시방서 핵심 요약을 제공하는 통합 리서치 허브입니다. 원문 데이터에 기반한 객관적 수치와 구조화된 표를 통해 빠른 실무 의사결정을 지원합니다.
-      </p>
-      <div class="stat-strip">
-        <div class="stat-box">
-          <div class="stat-k">TRACK A · CAPITAL MARKETS</div>
-          <div class="stat-v">DART 공모주 수요예측·확약·유통물량</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-k">TRACK B · PUBLIC PROCUREMENT</div>
-          <div class="stat-v">나라장터 시방서 3줄 요약·자격 검증</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-k">VERIFICATION PRINCIPLE</div>
-          <div class="stat-v">공공 원문 교차 검증·제로 추측 원칙</div>
+  <main id="main-content">
+    <!-- H1 Search Hub Hero + Interactive 3D Scene A -->
+    <section class="qti-sec" style="padding-top:42px;">
+      <div class="qti-in">
+        <div class="qti-hero-grid">
+          <div>
+            <div class="qti-eyebrow">QUANT &amp; TENDER INTELLIGENCE · DART · G2B</div>
+            <h1 class="qti-hero-title">공시와 시방서를<br />3초 만에 읽는 데이터 리서치</h1>
+            <p class="qti-hero-lead">금융감독원 DART 공모주 수급 데이터와 조달청 나라장터(G2B) IT 공공입찰 시방서를 매일 아침 자동 분석해 정량 지표로 공개합니다.</p>
+
+            <form class="qti-search-box" id="hub-search-form" role="search" aria-label="공모주 및 입찰 통합 검색">
+              <span aria-hidden="true">🔍</span>
+              <input type="search" id="hub-q" placeholder="종목명, 발주처, &quot;AI 영상분석&quot; 처럼 검색" autocomplete="off" aria-label="종목명 또는 발주처 검색" />
+              <button type="submit" class="qti-btn qti-btn-primary" style="padding:8px 14px;">검색</button>
+            </form>
+
+            <div id="hub-search-results" class="qti-card" style="margin-bottom:16px;" hidden></div>
+
+            <div class="qti-live-stats" aria-label="실시간 누적 분석 지표">
+              <span><b id="st-total">362</b> <span class="muted">누적 리포트</span></span>
+              <span><b id="st-ipo" style="color:var(--ipo);">25</b> <span class="muted">공모주</span></span>
+              <span><b id="st-tender" style="color:var(--tender);">337</b> <span class="muted">입찰 공고</span></span>
+              <span class="xs muted">● 마지막 갱신 <strong class="num" id="st-updated" style="color:var(--text);">2026-11-22 11:51</strong></span>
+            </div>
+
+            <div class="qti-chips" style="margin-top:16px;" aria-label="인기 주제 빠른 필터">
+              <button type="button" class="qti-chip is-active" data-hub-tag="">전체</button>
+              <button type="button" class="qti-chip" data-hub-tag="확약">#의무보유확약</button>
+              <button type="button" class="qti-chip" data-hub-tag="유통">#유통물량</button>
+              <button type="button" class="qti-chip" data-hub-tag="AI">#AI·영상분석</button>
+              <button type="button" class="qti-chip" data-hub-tag="클라우드">#클라우드</button>
+              <button type="button" class="qti-chip" data-hub-tag="네트워크">#네트워크·보안</button>
+              <button type="button" class="qti-chip" data-hub-tag="서울">#서울·경기 입찰</button>
+            </div>
+          </div>
+
+          <div class="qti-hero-3d-col">
+            <div class="qti-3d-stage" id="hub-hero-3d" data-qti-3d="hub-hero" data-ipo-count="25" data-tender-count="337" tabindex="0" role="region" aria-label="QTI Lab 데이터 흐름 인터랙티브 3D 다이어그램. 좌우 방향키로 회전할 수 있습니다.">
+              <div class="qti-3d-tip"></div>
+              <div class="qti-3d-fallback">
+                <img src="./assets/charts/pipeline_arch.svg" alt="DART와 나라장터에서 QTI 엔진으로 흐르는 자동화 아키텍처" style="max-height:290px;" />
+              </div>
+              <div class="qti-3d-hud">
+                <span>INTERACTIVE 3D · 드래그 / ←→ 회전</span>
+                <span id="hud-counts">DART 25 + G2B 337 → 362</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="track-grid" aria-label="리서치 트랙 안내">
-      <article class="track-card track-ipo">
-        <div>
-          <span class="badge badge-emerald">TRACK A · DART IPO RADAR</span>
-          <h2>IPO 퀀트 수급 레이더</h2>
-          <div class="track-kpi-row">
-            <span class="track-kpi-chip" style="background:var(--emerald-soft);color:#0B5E57;border-color:var(--emerald-border);">7변수 상대값 &amp; 사용자 가중치 시뮬레이터</span>
-            <span class="track-kpi-chip">실질 유통비율(Net Float %) · 상대 수급강도</span>
-            <span class="track-kpi-chip">상장 전 5일 지수온도 · 시간대별 고점 분석</span>
+    <!-- Reserved Leaderboard AdSense (CLS 0) -->
+    <div class="qti-in">
+      <aside class="qti-ad qti-ad-leaderboard" aria-label="광고 영역">
+        <span class="qti-ad-label">ADVERTISEMENT</span>
+        <ins class="adsbygoogle" style="display:block;width:100%;" data-ad-client="ca-pub-6939017300505908" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </aside>
+    </div>
+
+    <!-- Two-Column Live Feeds (Pre-rendered for SEO + Hydrated from hub_feed.json) -->
+    <section class="qti-sec">
+      <div class="qti-in">
+        <div class="qti-grid qti-g2">
+          <div class="qti-card">
+            <div class="qti-sec-head">
+              <h2><span class="qti-badge qti-b-ipo mono" style="vertical-align:2px;margin-right:6px;">IPO</span> 최신 공모주 수급 리포트</h2>
+              <a href="https://ipo.qtilab.com/">청약 캘린더 →</a>
+            </div>
+            <div class="qti-row-list" id="hub-ipo-list">
+              <a href="https://ipo.qtilab.com/posts/20261121-000547-하나증권/"><span class="qti-badge qti-b-ipo mono">DART</span><div class="qti-row-main"><div class="qti-row-title">하나증권 <span class="xs muted num">000547</span></div><div class="qti-row-sub">발행 2026-11-21 · 증권발행실적 정량 분석</div></div><div class="qti-row-val num"><strong>수요예측 전</strong></div></a>
+              <a href="https://ipo.qtilab.com/posts/20261119-000024-아델/"><span class="qti-badge qti-b-ipo mono">DART</span><div class="qti-row-main"><div class="qti-row-title">주식회사 아델 <span class="xs muted num">000024</span></div><div class="qti-row-sub">발행 2026-11-19 · 수급·유통물량 브리핑</div></div><div class="qti-row-val num"><strong>수요예측 전</strong></div></a>
+              <a href="https://ipo.qtilab.com/posts/20261118-000116-유캐스트/"><span class="qti-badge qti-b-dday mono">확약 20.2%</span><div class="qti-row-main"><div class="qti-row-title">유캐스트 <span class="xs muted num">000116</span></div><div class="qti-row-sub">발행 2026-11-18 · 기관 수요예측 반영</div></div><div class="qti-row-val num"><strong>173.4:1</strong></div></a>
+              <a href="https://ipo.qtilab.com/posts/20261026-420610-인텔리빅스/"><span class="qti-badge qti-b-dday mono">품절주</span><div class="qti-row-main"><div class="qti-row-title">인텔리빅스 <span class="xs muted num">420610</span></div><div class="qti-row-sub">DART 증권발행실적 · 확약·유통 분석</div></div><div class="qti-row-val num"><strong>상세 보기 →</strong></div></a>
+            </div>
+            <div class="xs muted" style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:flex;justify-content:space-between;">
+              <span>출처: 금융감독원 전자공시(DART)</span>
+              <a href="https://ipo.qtilab.com/posts/" style="font-weight:700;">전체 25건 보기 →</a>
+            </div>
           </div>
-          <p>
-            절대 공모가·금액 왜곡을 배제한 실질 유통비율(Net Float %), 당일 상대 수급강도(거래량/실질유통), 상장 전 5영업일(D-5~D-1) KOSPI·KOSDAQ 지수 시장온도 등 7대 핵심 상대값 변수(V1~V7)와 사용자 가중치 배치 슬라이더(자동 100% 정규화 · 4종 전략 프리셋)를 통해 유사 종목 Top-3와 시간대별 고점 구간을 시뮬레이션합니다.
-          </p>
-          <ul class="feature-list">
-            <li>공모주 7대 상대값 변수(V1~V7) 사용자 가중치 배치 패널(자동 100% 정규화) 및 4종 원클릭 전략 프리셋</li>
-            <li>당일 상대 수급강도(거래량/실질유통 %) · VWAP 단가 프리미엄 분리 산출 및 6개 시간대별(09:00~15:30) 고점 분석</li>
-            <li>각 종목 리포트 하단 7대 상대값 변수 자동 프리셋(Pre-filled) 시나리오 실험기 탑재</li>
-          </ul>
-        </div>
-        <div class="track-actions">
-          <a class="btn btn-emerald" href="https://ipo.qtilab.com/#home-ipo-quant-simulator">7변수 가중치 시뮬레이터 →</a>
-          <a class="btn btn-outline" href="https://ipo.qtilab.com/posts/">전체 아카이브</a>
-          <a class="btn btn-outline" href="https://ipo.qtilab.com/contact/">IPO 문의·제보</a>
-        </div>
-      </article>
 
-      <article class="track-card track-g2b">
-        <div>
-          <span class="badge badge-gold">TRACK B · G2B TENDER INTELLIGENCE</span>
-          <h2>공공입찰 시방서 인텔리전스</h2>
-          <div class="track-kpi-row">
-            <span class="track-kpi-chip">나라장터 시방서 3줄 요약</span>
-            <span class="track-kpi-chip">면허·지역제한 검증표</span>
-            <span class="track-kpi-chip">낙찰하한율 87.745% 벤치마크</span>
+          <div class="qti-card">
+            <div class="qti-sec-head">
+              <h2><span class="qti-badge qti-b-tender mono" style="vertical-align:2px;margin-right:6px;">TENDER</span> 최신 공공입찰 시방서 요약</h2>
+              <a href="https://tender.qtilab.com/" style="color:var(--tender);">전체 공고 →</a>
+            </div>
+            <div class="qti-row-list" id="hub-tender-list">
+              <a href="https://tender.qtilab.com/posts/20261122-r26bk01841746-000-서울특별시-성북구/"><span class="qti-badge qti-b-tender">서울</span><div class="qti-row-main"><div class="qti-row-title">27~28년 성북구 스마트 통합관제센터 통합유지관리 용역</div><div class="qti-row-sub">서울특별시 성북구 · 하한율 87.745%</div></div><div class="qti-row-val num"><strong>20.0억</strong></div></a>
+              <a href="https://tender.qtilab.com/posts/"><span class="qti-badge qti-b-tender">전국</span><div class="qti-row-main"><div class="qti-row-title">2027~28년 스마트공장 사업관리시스템 위탁운영</div><div class="qti-row-sub">조달청 · 하한율 87.745%</div></div><div class="qti-row-val num"><strong>38.2억</strong></div></a>
+              <a href="https://tender.qtilab.com/posts/"><span class="qti-badge qti-b-tender">부산</span><div class="qti-row-main"><div class="qti-row-title">AI 기반 보안관제센터 운영 사업(27~29년)</div><div class="qti-row-sub">조달청 부산지방조달청 · 하한율 87.745%</div></div><div class="qti-row-val num"><strong>81.0억</strong></div></a>
+              <a href="https://tender.qtilab.com/posts/"><span class="qti-badge qti-b-tender">전남</span><div class="qti-row-main"><div class="qti-row-title">우정사업 인터넷전화 서비스 운영 사업자 선정</div><div class="qti-row-sub">조달청 광주지방조달청 · 하한율 87.745%</div></div><div class="qti-row-val num"><strong>57.4억</strong></div></a>
+            </div>
+            <div class="xs muted" style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:flex;justify-content:space-between;">
+              <span>출처: 조달청 나라장터(G2B)</span>
+              <a href="https://tender.qtilab.com/posts/" style="font-weight:700;color:var(--tender);">전체 337건 보기 →</a>
+            </div>
           </div>
-          <p>
-            나라장터 정보통신·네트워크·CCTV·AI 인프라 입찰 공고와 과업지시서를 분석하여 핵심 기술 스펙 3줄 요약, 필수 보유 면허, 지역 제한 및 발주처 과거 낙찰하한율 이력을 브리핑합니다.
-          </p>
-          <ul class="feature-list">
-            <li>수십 페이지 시방서(RFP) 핵심 기술 규격 3줄 압축 브리핑</li>
-            <li>직접생산확인증명·면허·기술인력·지역제한 컴플라이언스 표</li>
-            <li>발주처별 과거 낙찰하한율 이력 및 입찰 규격 대조 방법론</li>
-            <li>B2B 14일 무료 입찰 알림 파일럿 &amp; 사내 폐쇄망 구축 상담 지원</li>
-          </ul>
-        </div>
-        <div class="track-actions">
-          <a class="btn btn-primary" href="https://tender.qtilab.com/">입찰 리포트 바로가기 →</a>
-          <a class="btn btn-outline" href="https://tender.qtilab.com/posts/">전체 아카이브</a>
-          <a class="btn btn-outline" href="https://tender.qtilab.com/contact/">14일 무료 파일럿·B2B 상담</a>
-        </div>
-      </article>
-    </section>
-
-    <aside class="ad-slot" aria-label="허브 포털 광고 영역">
-      <span class="ad-label">ADVERTISEMENT</span>
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-6939017300505908"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
-
-    <section class="methodology-panel" aria-labelledby="b2b-pilot-heading" style="margin-bottom:28px;">
-      <h2 id="b2b-pilot-heading">B2B 14일 무료 입찰 알림 파일럿 · 사내 폐쇄망 구축 상담 안내</h2>
-      <p>
-        정보통신공사업·CCTV·네트워크 납품 중소 SI 실무팀이 결제 부담 없이 공고 요약 효율을 먼저 검증하고, 필요 시 사내 보안 환경에 맞는 온프레미스 지원 도구를 상담할 수 있도록 단계별 안내 데스크를 운영합니다.
-      </p>
-      <div class="gov-grid">
-        <div class="gov-item">
-          <h3>Step 0 · 14일 무료 맞춤 파일럿</h3>
-          <p>보유 면허와 주력 품목 키워드를 접수하시면 최근 실제 공고 2건 요약 샘플과 14일간 주간 G2B 마스터 엑셀을 무료 제공합니다.</p>
-          <a href="https://tender.qtilab.com/contact/">14일 파일럿 신청 안내 →</a>
-        </div>
-        <div class="gov-item">
-          <h3>사내 폐쇄망 규격대비표 도구</h3>
-          <p>외부 클라우드에 시방서·제안서를 올리지 않고 사내 Docker/온프레미스 환경에서 국문 시방서와 벤더 영문 PDF를 대조하는 보조 도구 상담을 지원합니다.</p>
-          <a href="https://tender.qtilab.com/contact/">폐쇄망 구축 상담 보기 →</a>
-        </div>
-        <div class="gov-item">
-          <h3>업무 보조·원문 검증 원칙</h3>
-          <p>모든 요약과 대비표는 참고용 지원 도구(AS IS)로 제공되며, 최종 입찰 자격 확인과 투찰가 산정은 나라장터 공식 원문을 기준으로 진행합니다.</p>
-          <a href="terms.html">이용약관 및 면책 기준 →</a>
         </div>
       </div>
     </section>
 
-    <section class="methodology-panel" aria-labelledby="governance-heading">
-      <h2 id="governance-heading">리서치 거버넌스 및 공식 안내 문서</h2>
-      <p>
-        퀀트 &amp; 입찰 인텔리전스 랩은 투명한 데이터 출처 공개와 엄격한 법적 고지 기준을 준수합니다.
-      </p>
-      <div class="gov-grid">
-        <div class="gov-item">
-          <h3>연구소 소개 &amp; 분석 방법론</h3>
-          <p>OpenDART·나라장터 원천 데이터 수집 체계와 정량 파싱·백테스팅 기준을 안내합니다.</p>
-          <a href="about.html">랩 소개 자세히 보기 →</a>
+    <!-- Flat Isometric Infographics (3-Col · CVD-safe · Build-Time SVG) -->
+    <section class="qti-sec" id="charts" style="padding-top:6px;">
+      <div class="qti-in">
+        <div class="qti-sec-head">
+          <div>
+            <div class="qti-eyebrow" style="margin-bottom:4px;">FLAT ISOMETRIC INFOGRAPHICS · CVD-SAFE</div>
+            <h2>오늘의 퀀트 리서치 차트</h2>
+          </div>
+          <a href="https://ipo.qtilab.com/#home-ipo-quant-simulator">7변수 시뮬레이터 열기 →</a>
         </div>
-        <div class="gov-item">
-          <h3>개인정보처리방침</h3>
-          <p>비회원 열람 구조, 쿠키 및 Google Analytics / AdSense 광고 관련 권리 안내를 확인하세요.</p>
-          <a href="privacy.html">개인정보처리방침 보기 →</a>
+        <div class="qti-grid qti-g3">
+          <a class="qti-report-card" href="https://ipo.qtilab.com/">
+            <div style="display:flex;justify-content:space-between;align-items:center;"><span class="qti-badge qti-b-ipo mono">DART IPO</span><span class="xs muted">CVD-Safe SVG</span></div>
+            <img src="./assets/charts/ipo_comp_top5.svg" alt="기관 수요예측 경쟁률 상위 5 아이소메트릭 막대 그래프" loading="lazy" />
+            <h3>기관 수요예측 경쟁률 상위 5</h3>
+            <p class="xs muted" style="margin:0;">최근 추적 공모주 기준 기관 경쟁률 비교 · 상단 수치 병기</p>
+          </a>
+          <a class="qti-report-card" href="https://ipo.qtilab.com/#home-ipo-quant-simulator">
+            <div style="display:flex;justify-content:space-between;align-items:center;"><span class="qti-badge qti-b-dday mono">BACKTEST</span><span class="xs muted">KRX 등락색</span></div>
+            <img src="./assets/charts/ipo_backtest_heatmap.svg" alt="확약 비율 및 경쟁률 구간별 과거 시초가 참고 분포 아이소메트릭 히트맵" loading="lazy" />
+            <h3>확약 비율 × 경쟁률 시초가 분포</h3>
+            <p class="xs muted" style="margin:0;">과거 유사 수급 구간의 상장일 시초가 사후 통계 참고 분포</p>
+          </a>
+          <a class="qti-report-card" href="https://tender.qtilab.com/#region-stats">
+            <div style="display:flex;justify-content:space-between;align-items:center;"><span class="qti-badge qti-b-tender mono">G2B TENDER</span><span class="xs muted">실제 누적 집계</span></div>
+            <img src="./assets/charts/tender_region_map.svg" alt="지역별 IT 공공입찰 추정예산 분포 한국 타일맵" loading="lazy" />
+            <h3>지역별 IT 공공입찰 추정예산</h3>
+            <p class="xs muted" style="margin:0;">전국 13개 권역 나라장터 IT·네트워크·AI 공고 추정가격 집계</p>
+          </a>
         </div>
-        <div class="gov-item">
-          <h3>이용약관 &amp; 금융·입찰 면책</h3>
-          <p>자본시장 투자 권유 비해당 원칙과 나라장터 원문 확인 의무를 명시합니다.</p>
-          <a href="terms.html">이용약관/면책조항 보기 →</a>
-        </div>
+
+        <!-- Reserved In-Feed AdSense (CLS 0) -->
+        <aside class="qti-ad qti-ad-in-feed" aria-label="인피드 광고 영역">
+          <span class="qti-ad-label">ADVERTISEMENT</span>
+          <ins class="adsbygoogle" style="display:block;width:100%;" data-ad-client="ca-pub-6939017300505908" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </aside>
+
+        <!-- Inline Deep-Teal Subscribe Banner (Zero Popups) -->
+        <aside class="qti-subscribe" aria-label="마스터 엑셀 구독 안내">
+          <div>
+            <span class="xs num" style="color:var(--accent);font-weight:700;letter-spacing:.08em;">PREMIUM MASTER EXCEL · DAILY 06:30 KST</span>
+            <h3>매일 아침 6:30, 공모주·입찰 마스터 엑셀</h3>
+            <p>수요예측·의무보유확약·상장일 유통물량 누적 시트와 나라장터 발주처별 낙찰하한율 시트를 팝업 없이 깔끔하게 받아보세요.</p>
+          </div>
+          <a class="qti-btn qti-btn-accent" href="./b2b/#excel">구독 안내 및 문의 →</a>
+        </aside>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">퀀트 &amp; 입찰 인텔리전스 랩 (Quant &amp; Tender Intelligence Lab)</div>
-        <div class="footer-links">
-          <a href="about.html">랩 소개</a>
-          <a href="privacy.html">개인정보처리방침</a>
-          <a href="terms.html">이용약관/면책조항</a>
-          <a href="https://ipo.qtilab.com/contact/">IPO 문의</a>
-          <a href="https://tender.qtilab.com/contact/">B2B·입찰 문의</a>
+  <!-- ⑩ Global Footer (3-Col · Real Contact Only · Zero Fake Address) -->
+  <footer class="qti-footer">
+    <div class="qti-in">
+      <div class="qti-ft-cols">
+        <div>
+          <a class="qti-logo" href="./"><span class="qti-logo-mark" aria-hidden="true"></span><span>QTI Lab</span></a>
+          <p class="xs" style="margin:10px 0 0;max-width:44ch;">
+            금융감독원 전자공시(DART) 공모주 수급 정량 분석과 조달청 나라장터(G2B) IT·인프라 입찰 시방서 핵심 요약을 제공하는 통합 데이터 리서치 허브입니다.
+          </p>
+        </div>
+        <div>
+          <h4>데이터 인텔리전스</h4>
+          <ul>
+            <li><a href="https://ipo.qtilab.com/">IPO 퀀트 수급 레이더</a></li>
+            <li><a href="https://tender.qtilab.com/">공공입찰 시방서 인텔리전스</a></li>
+            <li><a href="./b2b/#excel">마스터 엑셀 데이터 구독</a></li>
+            <li><a href="./b2b/">B2B 폐쇄망 AI 서버 구축</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>규정 준수 · 문의</h4>
+          <ul>
+            <li><a href="./about.html">랩 소개 · 방법론 v2.1</a></li>
+            <li><a href="./privacy.html">개인정보처리방침</a></li>
+            <li><a href="./terms.html">이용약관 · 면책조항</a></li>
+            <li><a href="mailto:lastima33@gmail.com">문의: lastima33@gmail.com</a></li>
+          </ul>
         </div>
       </div>
-      <p class="footer-disclaimer">
-        ※ 면책조항: 본 사이트는 금융감독원 전자공시(DART)·조달청 나라장터(G2B) 공개 데이터의 자동 정량 요약·통계 아카이브이며, 「자본시장법」상 투자자문업·유사투자자문업을 영위하지 않습니다. 수록 정보는 투자 권유, 목표가 제시 또는 낙찰 보증이 아니며, 자동 파싱 과정에서 데이터 지연·오차가 발생할 수 있습니다. 최종 판단 전 반드시 DART·나라장터 공식 원문을 직접 확인하시기 바랍니다.
-      </p>
-      <p class="footer-copy">© 2026 Quant &amp; Tender Intelligence Lab (퀀트 &amp; 입찰 인텔리전스 랩). All rights reserved.</p>
+      <div class="qti-ft-bottom">
+        <span>※ 본 사이트의 모든 콘텐츠는 공시·입찰 원문 기반 자동 정량 요약 참고 자료이며 투자 권유가 아닙니다.</span>
+        <span>© 2026 퀀트 &amp; 입찰 인텔리전스 랩 (Quant &amp; Tender Intelligence Lab). All rights reserved.</span>
+      </div>
     </div>
   </footer>
 
-  <button id="back-to-top" type="button" aria-label="맨 위로 이동">↑ 맨 위로</button>
-
+  <button id="qti-back-to-top" type="button" aria-label="맨 위로 이동">↑ 맨 위로</button>
+  <script defer src="./assets/js/qti-ui.js"></script>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+  <script type="module" src="./assets/js/qti-3d.js"></script>
   <script>
-    (function () {
-      var progressBar = document.getElementById('reading-progress');
-      var backToTop = document.getElementById('back-to-top');
-
-      function updateScrollUI() {
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
-        var docHeight = Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight
-        ) - window.innerHeight;
-        if (progressBar) {
-          var pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
-          progressBar.style.width = pct.toFixed(2) + '%';
+  /* Hydrate live hub feeds & instant cross-track search from data/hub_feed.json */
+  (function () {
+    var feed = null;
+    function esc(s) { return String(s || "").replace(/[&<>"']/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[c]; }); }
+    function renderResults(q) {
+      var box = document.getElementById("hub-search-results");
+      if (!box || !feed) return;
+      var term = (q || "").trim().toLowerCase();
+      if (!term) { box.hidden = true; return; }
+      var hits = [];
+      (feed.ipo_all || []).forEach(function (x) {
+        if ((x.corp + " " + x.code + " " + x.title).toLowerCase().indexOf(term) !== -1) {
+          hits.push({ kind: "IPO", cls: "qti-b-ipo", title: x.corp + (x.code ? " (" + x.code + ")" : ""), sub: x.date + " · " + x.comp, val: "확약 " + x.lock + "%", url: x.url });
         }
-        if (backToTop) {
-          if (scrollTop > 280) {
-            backToTop.classList.add('is-visible');
-          } else {
-            backToTop.classList.remove('is-visible');
-          }
+      });
+      (feed.tender_all || []).forEach(function (x) {
+        if ((x.bid_name + " " + x.org + " " + x.region).toLowerCase().indexOf(term) !== -1) {
+          hits.push({ kind: x.region, cls: "qti-b-tender", title: x.bid_name, sub: x.org + " · " + x.date, val: x.budget, url: x.url });
         }
+      });
+      if (!hits.length) {
+        box.innerHTML = '<div class="sm muted">“' + esc(q) + '”에 대한 검색 결과가 없습니다.</div>';
+      } else {
+        box.innerHTML = '<div class="xs muted" style="margin-bottom:8px;">검색 결과 <strong class="num">' + hits.length + '건</strong> (상위 8건 표시)</div><div class="qti-row-list">' +
+          hits.slice(0, 8).map(function (h) {
+            return '<a href="' + esc(h.url) + '"><span class="qti-badge ' + h.cls + ' mono">' + esc(h.kind) + '</span><div class="qti-row-main"><div class="qti-row-title">' + esc(h.title) + '</div><div class="qti-row-sub">' + esc(h.sub) + '</div></div><div class="qti-row-val xs num"><strong>' + esc(h.val) + '</strong></div></a>';
+          }).join("") + "</div>";
       }
+      box.hidden = false;
+    }
 
-      window.addEventListener('scroll', updateScrollUI, { passive: true });
-      window.addEventListener('resize', updateScrollUI, { passive: true });
-      updateScrollUI();
+    fetch("./data/hub_feed.json")
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        feed = d;
+        if (d.counts) {
+          document.getElementById("st-total").textContent = d.counts.total;
+          document.getElementById("st-ipo").textContent = d.counts.ipo;
+          document.getElementById("st-tender").textContent = d.counts.tender;
+          var hud = document.getElementById("hud-counts");
+          if (hud) hud.textContent = "DART " + d.counts.ipo + " + G2B " + d.counts.tender + " → " + d.counts.total;
+        }
+        if (d.updated) document.getElementById("st-updated").textContent = d.updated;
+        var ipoBox = document.getElementById("hub-ipo-list");
+        if (ipoBox && d.ipo_latest && d.ipo_latest.length) {
+          ipoBox.innerHTML = d.ipo_latest.slice(0, 4).map(function (x) {
+            var bdg = x.lock_num >= 30 ? '<span class="qti-badge qti-b-dday mono">확약 ' + x.lock_num.toFixed(1) + '%</span>' : '<span class="qti-badge qti-b-ipo mono">DART</span>';
+            var val = x.comp_num > 0 ? x.comp_num.toLocaleString() + ":1" : x.comp_str;
+            return '<a href="' + esc(x.url) + '">' + bdg + '<div class="qti-row-main"><div class="qti-row-title">' + esc(x.corp) + (x.code ? ' <span class="xs muted num">' + esc(x.code) + '</span>' : '') + '</div><div class="qti-row-sub">발행 ' + esc(x.date) + ' · ' + esc(x.underwriter) + '</div></div><div class="qti-row-val num"><strong>' + esc(val) + '</strong><div class="xs muted">확약 ' + x.lock_num.toFixed(1) + '%</div></div></a>';
+          }).join("");
+        }
+        var tdBox = document.getElementById("hub-tender-list");
+        if (tdBox && d.tender_latest && d.tender_latest.length) {
+          tdBox.innerHTML = d.tender_latest.slice(0, 4).map(function (x) {
+            return '<a href="' + esc(x.url) + '"><span class="qti-badge qti-b-tender">' + esc(x.region) + '</span><div class="qti-row-main"><div class="qti-row-title">' + esc(x.bid_name) + '</div><div class="qti-row-sub">' + esc(x.org) + ' · 하한율 ' + (x.floor_rate ? x.floor_rate.toFixed(3) + '%' : '원문확인') + '</div></div><div class="qti-row-val num"><strong>' + esc(x.budget_label) + '</strong></div></a>';
+          }).join("");
+        }
+      })
+      .catch(function () {});
 
-      if (backToTop) {
-        backToTop.addEventListener('click', function () {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-    })();
+    var hq = document.getElementById("hub-q");
+    var gq = document.getElementById("gnb-q");
+    var form = document.getElementById("hub-search-form");
+    if (form) form.addEventListener("submit", function (e) { e.preventDefault(); renderResults(hq.value); });
+    if (hq) hq.addEventListener("input", function () { renderResults(hq.value); });
+    if (gq) gq.addEventListener("input", function () { if (hq) hq.value = gq.value; renderResults(gq.value); });
+    document.querySelectorAll("[data-hub-tag]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        document.querySelectorAll("[data-hub-tag]").forEach(function (x) { x.classList.toggle("is-active", x === btn); });
+        if (hq) hq.value = btn.dataset.hubTag || "";
+        renderResults(btn.dataset.hubTag || "");
+      });
+    });
+  })();
   </script>
 </body>
 </html>
