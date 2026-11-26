@@ -1,9 +1,23 @@
 {
-  "updated": "2026-11-25 22:31",
+  "updated": "2026-11-27 05:43",
   "counts": {
-    "total": 52,
+    "total": 54,
     "ipo": 20,
-    "tender": 32
+    "tender": 34
+  },
+  "macro_brief": {
+    "date": "2026-11-27",
+    "updated_kst": "05:43 KST",
+    "v7_pct": -5.46,
+    "regime_label": "거시 급락 충격",
+    "regime_badge_class": "qti-b-dday",
+    "us10y_pct": 4.85,
+    "usdkrw": 1344.0,
+    "vix": 28.29,
+    "nasdaq_1d_pct": -0.62,
+    "lockup_7d_count": 6,
+    "lockup_7d_eok": 269.8,
+    "daily_url": "https://ipo.qtilab.com/daily/"
   },
   "ipo_latest": [
     {
@@ -84,7 +98,7 @@
       "rel": "/posts/20261118-000038-엠비디/",
       "date": "2026-11-18",
       "datetime": "2026-11-18T06:01:53+09:00",
-      "schedule": "2026-11-18",
+      "schedule": "기준선 중앙 -1,252,931원<br>(P25~P75: -5,3",
       "band": "7,000원 (희망밴드 9,600원 ~ 11,700원)",
       "underwriter": "-",
       "comp_str": "187.10:1",
@@ -192,6 +206,44 @@
     }
   ],
   "tender_latest": [
+    {
+      "bid_no": "R26BK01848821-000",
+      "bid_name": "2027년 교통위반관리시스템 운영 및 유지관리",
+      "title": "서울특별시 2027년 교통위반관리시스템 운영 및 유지관리 입찰 요약 | 예산 222,301,000원·하한율 87.745% (R26BK01848821-000)",
+      "slug": "20261126-r26bk01848821-000-서울특별시",
+      "url": "https://tender.qtilab.com/posts/20261126-r26bk01848821-000-서울특별시/",
+      "rel": "/posts/20261126-r26bk01848821-000-서울특별시/",
+      "date": "2026-11-26",
+      "datetime": "2026-11-26T09:08:22+09:00",
+      "org": "서울특별시",
+      "region": "서울",
+      "budget_won": 222301000,
+      "budget_eok": 2.22,
+      "budget_label": "2.2억",
+      "floor_rate": 87.745,
+      "license": "소프트웨어사업자(분야: 컴퓨터관련 서비스사업) 및 중소기업제품 공공구매제도 운영요령에 따른 유자격자",
+      "summary": "교통위반관리시스템 운영 및 유지관리",
+      "source_url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01848821&bidPbancOrd=000"
+    },
+    {
+      "bid_no": "R26BK01848695-000",
+      "bid_name": "(긴급)2027년도 공동주택종합포털 온-아파트 유지관리 용역",
+      "title": "인천광역시 (긴급)2027년도 공동주택종합포털 온-아파트 유지관리 용역 입찰 요약 | 예산 184,000,000원·하한율 87.745% (R26BK01848695-000)",
+      "slug": "20261126-r26bk01848695-000-인천광역시",
+      "url": "https://tender.qtilab.com/posts/20261126-r26bk01848695-000-인천광역시/",
+      "rel": "/posts/20261126-r26bk01848695-000-인천광역시/",
+      "date": "2026-11-26",
+      "datetime": "2026-11-26T09:03:29+09:00",
+      "org": "인천광역시",
+      "region": "인천",
+      "budget_won": 184000000,
+      "budget_eok": 1.84,
+      "budget_label": "1.8억",
+      "floor_rate": 87.745,
+      "license": "소프트웨어사업자(컴퓨터관련서비스사업, 업종 코드: 1468) 등록 필수",
+      "summary": "용역명: 2027년도 공동주택종합포털 온-아파트 유지관리 용역",
+      "source_url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01848695&bidPbancOrd=000"
+    },
     {
       "bid_no": "R26BK01838019-000",
       "bid_name": "‘27~‘28년 국방 사이버지식정보방 유지보수 사업",
@@ -305,44 +357,6 @@
       "license": "소프트웨어 사업자 (대기업 입찰 제한 적용)",
       "summary": "경기도 상권영향분석시스템 운영·유지관리",
       "source_url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01847921&bidPbancOrd=000"
-    },
-    {
-      "bid_no": "R26BK01842993-000",
-      "bid_name": "2027~2028년 보안관제 위탁운영",
-      "title": "조달청 2027~2028년 보안관제 위탁운영 입찰 요약 | 예산 2,466,357,000원·하한율 87.745% (R26BK01842993-000)",
-      "slug": "20261123-r26bk01842993-000-조달청",
-      "url": "https://tender.qtilab.com/posts/20261123-r26bk01842993-000-조달청/",
-      "rel": "/posts/20261123-r26bk01842993-000-조달청/",
-      "date": "2026-11-23",
-      "datetime": "2026-11-23T09:11:17+09:00",
-      "org": "조달청",
-      "region": "전국",
-      "budget_won": 2466357000,
-      "budget_eok": 24.66,
-      "budget_label": "24.7억",
-      "floor_rate": 87.745,
-      "license": "보안관제전문업체(6526) 업종 등록 필수",
-      "summary": "용역 분류: ICT 서비스 > 컴퓨터네트워크또는인터넷보안서비스",
-      "source_url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01842993&bidPbancOrd=000"
-    },
-    {
-      "bid_no": "R26BK01839451-000",
-      "bid_name": "2027년 위치추적시스템 유지보수 용역 사업",
-      "title": "조달청 서울지방조달청 2027년 위치추적시스템 유지보수 용역 사업 입찰 요약 | 예산 2,550,278,000원·하한율 87.745% (R26BK01839451-000)",
-      "slug": "20261123-r26bk01839451-000-조달청-서울지방조달청",
-      "url": "https://tender.qtilab.com/posts/20261123-r26bk01839451-000-조달청-서울지방조달청/",
-      "rel": "/posts/20261123-r26bk01839451-000-조달청-서울지방조달청/",
-      "date": "2026-11-23",
-      "datetime": "2026-11-23T09:10:31+09:00",
-      "org": "조달청 서울지방조달청",
-      "region": "서울",
-      "budget_won": 2550278000,
-      "budget_eok": 25.5,
-      "budget_label": "25.5억",
-      "floor_rate": 87.745,
-      "license": "소프트웨어사업자(컴퓨터관련서비스사업, 업종코드 : 1468)",
-      "summary": "위치추적시스템 유지보수 용역",
-      "source_url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01839451&bidPbancOrd=000"
     }
   ],
   "ipo_all": [
@@ -528,6 +542,22 @@
     }
   ],
   "tender_all": [
+    {
+      "bid_name": "2027년 교통위반관리시스템 운영 및 유지관리",
+      "org": "서울특별시",
+      "region": "서울",
+      "budget": "2.2억",
+      "url": "https://tender.qtilab.com/posts/20261126-r26bk01848821-000-서울특별시/",
+      "date": "2026-11-26"
+    },
+    {
+      "bid_name": "(긴급)2027년도 공동주택종합포털 온-아파트 유지관리 용역",
+      "org": "인천광역시",
+      "region": "인천",
+      "budget": "1.8억",
+      "url": "https://tender.qtilab.com/posts/20261126-r26bk01848695-000-인천광역시/",
+      "date": "2026-11-26"
+    },
     {
       "bid_name": "‘27~‘28년 국방 사이버지식정보방 유지보수 사업",
       "org": "조달청 서울지방조달청",
@@ -786,16 +816,16 @@
     }
   ],
   "tender_stats": {
-    "total_eok": 982.1,
+    "total_eok": 986.2,
     "over_10eok": 26,
     "avg_floor": 87.74,
     "regions": {
-      "서울": 211.71,
+      "서울": 213.93,
+      "인천": 176.26999999999998,
       "경기": 39.8,
       "충남": 17.5,
       "부산": 135.48000000000002,
       "대구": 52.099999999999994,
-      "인천": 174.42999999999998,
       "전남": 14.39,
       "강원": 16.69
     }
